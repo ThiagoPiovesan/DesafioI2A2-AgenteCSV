@@ -60,7 +60,8 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configure a API Key da OpenAI
-Obtenha sua chave API em: https://platform.openai.com
+Obtenha sua chave API em: https://platform.openai.com ou https://platform.openai.com/api-keys
+
 
 ## 🚀 Como Usar
 

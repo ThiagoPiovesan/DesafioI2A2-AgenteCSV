@@ -98,7 +98,7 @@ class NotasFiscaisAgent:
         try:
             # Configurar LLM
             llm = ChatOpenAI(
-                temperature=0,
+                temperature=0.1,
                 model_name="gpt-4o-mini",
                 openai_api_key=openai_api_key
             )
@@ -132,6 +132,10 @@ class NotasFiscaisAgent:
             
             Colunas do cabeçalho: {list(self.df_cabecalho.columns)}
             Colunas dos itens: {list(self.df_itens.columns)}
+            
+            DataFrame df_cabecalho: {self.df_cabecalho}
+            DataFrame df_itens: {self.df_itens}
+            Você pode usar esses dados para responder perguntas sobre as notas fiscais.
             
             Pergunta: {question}
             
@@ -224,7 +228,9 @@ def main():
             "Quantas notas fiscais existem por fornecedor?",
             "Qual é o item mais caro nas notas fiscais?",
             "Mostre a distribuição de valores por mês",
-            "Quais são os 5 maiores valores de nota fiscal?"
+            "Quais são os 5 maiores valores de nota fiscal?",
+            "Qual é o fornecedor que teve maior montante recebido?",
+            "Qual item teve maior volume entregue (em quantidade)?"
         ]
         
         for example in examples:
